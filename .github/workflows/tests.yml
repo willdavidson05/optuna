@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - kaleido-fix
   pull_request: {}
   schedule:
     - cron: '0 23 * * SUN-THU'
@@ -58,7 +59,7 @@ jobs:
         key: ${{ runner.os }}-${{ matrix.python-version }}-${{ env.cache-name }}-${{ hashFiles('**/pyproject.toml') }}-v1
         restore-keys: |
           ${{ runner.os }}-${{ matrix.python-version }}-${{ env.cache-name }}-${{ hashFiles('**/pyproject.toml') }}
-          
+
     - name: Install Chromium
       run: sudo apt-get update && sudo apt-get install -y chromium-browser
 
