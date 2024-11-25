@@ -5,7 +5,10 @@ on:
     branches:
       - master
       - kaleido-fix
-  pull_request: {}
+  pull_request:
+    branches:
+      - kaleido-fix 
+      - master
   schedule:
     - cron: '0 23 * * SUN-THU'
   workflow_dispatch:
